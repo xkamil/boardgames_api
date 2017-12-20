@@ -31,6 +31,10 @@ app.use((req, res, next) => {
     next();
 });
 
+// Authorization middleware
+
+let authorizationMiddleware = require('./controllers/middleware/authorization');
+app.use(authorizationMiddleware);
 
 // Games
 let gamesRouter = require('./controllers/routes/games');
